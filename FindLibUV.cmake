@@ -36,7 +36,7 @@ SET(LIBUV_INCLUDE_DIRS "${LIBUV_INCLUDE_DIR}")
 SET(LIBUV_LIBRARIES "${LIBUV_LIBRARY}")
 
 function (libuv_setup_target_as_win32)
-    get_filename_component(_FILE_NAME ${LIBUV_LIBRARY} LAST_EXT)
+    get_filename_component(_FILE_NAME ${LIBUV_LIBRARY} NAME_WLE)
     if (_FILE_NAME STREQUAL uv_a)
         add_library(libuv STATIC IMPORTED)
         set_target_properties(libuv PROPERTIES
